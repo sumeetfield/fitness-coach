@@ -777,6 +777,52 @@ const EX={
    {head:[46,76],neck:[54,80],hip:[86,80],eB:[48,92],wB:[42,102],kF:[104,84],aF:[110,102],kB:[100,86],aB:[106,103],eF:[62,88],wF:[58,98]},
    {head:[46,68],neck:[54,72],hip:[86,68],eB:[48,86],wB:[42,102],kF:[104,78],aF:[110,102],kB:[100,80],aB:[106,103],eF:[56,62],wF:[40,50]}],
   target:["hip",0,-8]},
+
+ /* ---------------- DAILY BURN: the "monk way", instead of 10k steps ---------------- */
+ suryanamaskar:{name:"Surya Namaskar",equip:"Floor · flow",p:"5–10 rounds",
+  how:["The monk’s full-body flow — one round is 12 linked poses","Reach up and gently arch back → fold forward, hands to the floor","Step or jump back to a plank → lower → cobra → downward dog","Flow back up to standing. Move with your breath, no pausing"],
+  dont:["Don’t hold your breath — one breath per movement","Don’t force the backbend or the fold","Don’t rush; smooth and continuous beats fast"],
+  breath:"Inhale rising & opening · exhale folding",
+  poses:[
+   {head:[57,22],neck:[59,32],hip:[61,64],kF:[62,84],aF:[62,102],kB:[58,85],aB:[58,103],eF:[60,16],wF:[58,4],eB:[62,16],wB:[64,4]},
+   {head:[57,86],neck:[57,76],hip:[60,60],kF:[62,82],aF:[62,102],kB:[58,83],aB:[58,103],eF:[58,88],wF:[59,101],eB:[60,88],wB:[61,101]}],
+  target:["hip",0,-6]},
+
+ hindusquat:{name:"Hindu Squat (Baithak)",equip:"Bodyweight",p:"20–50 reps",
+  how:["The wrestler’s squat — feet hip-width, arms reach forward","Squat down fast onto the balls of your feet, heels rising","Swing your arms down and back as you drop","Stand, swing arms forward again. Find a breathing rhythm"],
+  dont:["Don’t crash down — control the drop","Don’t let the knees cave inward","Slow to flat-footed squats if your knees complain"],
+  breath:"Exhale down · inhale up, in rhythm",
+  poses:[
+   {head:[60,24],neck:[60,34],hip:[60,64],kF:[62,84],aF:[62,102],kB:[58,85],aB:[58,103],eF:[72,40],wF:[86,40],eB:[68,40],wB:[82,40]},
+   {head:[62,50],neck:[61,58],hip:[57,82],kF:[75,84],aF:[73,100],kB:[71,85],aB:[69,101],eF:[52,66],wF:[42,72],eB:[50,66],wB:[40,72]}],
+  target:["hip",-4,2]},
+
+ ropeskip:{name:"Rope Skipping",equip:"Rope (or mime it)",p:"8–15 min",
+  how:["Elbows in, turn the rope with your wrists — not big arm swings","Small, soft bounces on the balls of your feet","Stay light — barely leave the floor","No rope? Mime it; the footwork is the workout"],
+  dont:["Don’t jump high — low and quick","Don’t land flat on your heels","Don’t swing from the shoulders"],
+  breath:"Steady, relaxed breathing throughout",
+  poses:[
+   {head:[60,26],neck:[60,36],hip:[60,66],kF:[61,86],aF:[61,102],kB:[59,86],aB:[59,102],eF:[66,56],wF:[73,62],eB:[54,56],wB:[47,62]},
+   {head:[60,20],neck:[60,30],hip:[60,60],kF:[61,78],aF:[61,94],kB:[59,78],aB:[59,94],eF:[66,50],wF:[74,54],eB:[54,50],wB:[46,54]}],
+  target:["neck",0,-7]},
+
+ shadowbox:{name:"Shadow Boxing",equip:"Bodyweight",p:"3 × 3 min",
+  how:["Hands up guarding your chin, stay light on your feet","Throw slow, sharp punches — jab, cross, hook","Rotate your hips into each punch, then snap the hand back","Keep moving between shots — never stand still"],
+  dont:["Don’t drop the guard hand while you punch","Don’t lock your elbow at full extension","Don’t hold your breath — exhale on each shot"],
+  breath:"Sharp exhale on every punch",
+  poses:[
+   {head:[57,28],neck:[59,38],hip:[60,66],kF:[70,84],aF:[78,102],kB:[52,85],aB:[45,103],eF:[70,40],wF:[87,39],eB:[54,36],wB:[60,30]},
+   {head:[59,28],neck:[59,38],hip:[60,66],kF:[70,84],aF:[78,102],kB:[52,85],aB:[45,103],eF:[60,34],wF:[55,28],eB:[68,40],wB:[88,42]}],
+  target:["neck",7,1]},
+
+ mtclimber:{name:"Mountain Climbers",equip:"Bodyweight",p:"30–45s",
+  how:["Start in a strong plank, hands under shoulders","Drive one knee toward your chest","Switch legs quickly — like running on the floor","Keep your hips low and level, back flat"],
+  dont:["Don’t let your hips bounce up high","Don’t let the back sag toward the floor","Slow the pace right down if your form breaks"],
+  breath:"Quick steady breaths, don’t hold",
+  poses:[
+   {head:[36,66],neck:[46,70],hip:[84,76],eF:[46,88],wF:[46,102],eB:[50,88],wB:[50,102],kF:[70,82],aF:[60,90],kB:[104,90],aB:[122,102]},
+   {head:[36,66],neck:[46,70],hip:[84,76],eF:[46,88],wF:[46,102],eB:[50,88],wB:[50,102],kF:[104,90],aF:[122,102],kB:[70,82],aB:[60,90]}],
+  target:["hip",-6,2]},
 };
 
 /* movement pattern → best exercise per equipment level */
@@ -1167,6 +1213,8 @@ const CHAINS={
  crawl:["bearhold","bearcrawl","sitthrough"],
  squat:["bwsquat","deepsquat","duckwalk","cossack"],
  bridge:["glutebridge","birddog","crabreach"]};
+/* Daily conditioning — pick one, move 12–15 min non-stop; replaces the 10k-step walk */
+const BURN=["suryanamaskar","hindusquat","ropeskip","shadowbox","mtclimber"];
 const PDAYS=[
  {id:"P1",label:"Day 1",focus:"Hang & crawl",plan:[
    ["Wake the body up","squat",2],["Wake the body up","bridge",2],
@@ -1260,6 +1308,30 @@ function pCard(ch,n,idx){
        </div></div>
    </div></div>`;}
 
+function pBurnCard(id,idx){
+  const ex=EX[id],done=pToday(id,1),ct=done[0]?1:0;
+  return `<div class="card ex" data-ex="${id}" data-burn="1">
+   <button class="ex-head" aria-expanded="false">
+     <span class="ex-idx num">${String(idx).padStart(2,"0")}</span>
+     <span><span class="ex-name">${ex.name}</span>
+     <span class="ex-meta">${ex.equip} · ${ex.p}</span></span>
+     <span class="ex-right">
+       <span class="chip ${ct?"good":"gray"} num">${ct?"✓ today":"do it"}</span>
+       <svg class="caret" width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6l4 4 4-4"/></svg>
+     </span></button>
+   <div class="ex-body">
+     <div class="demo"><canvas aria-label="${ex.name} form demonstration"></canvas><span class="hint">${RM?"tap to step":"form demo"}</span></div>
+     <div class="cues">
+       <div class="cuebox how"><h4>How</h4><ul>${ex.how.map(x=>`<li>${x}</li>`).join("")}</ul></div>
+       <div class="cuebox dont"><h4>Never</h4><ul>${ex.dont.map(x=>`<li>${x}</li>`).join("")}</ul></div>
+     </div>
+     <div class="breath"><b>Breathing:</b> ${ex.breath}</div>
+     <div class="sets"><div class="setrow" data-si="0">
+       <span class="lbl">TODAY</span><span class="pmeta">Move 12–15 min non-stop</span>
+       <button class="done num" aria-pressed="${done[0]}" aria-label="Mark done today">${done[0]?"✓":"○"}</button>
+     </div></div>
+   </div></div>`;}
+
 function renderPrimal(){
   stopAnim();
   if(!PDAYS.find(d=>d.id===pDay))pDay=pSuggest();
@@ -1278,10 +1350,13 @@ function renderPrimal(){
   D.plan.forEach(([blk,ch,n])=>{
     if(blk!==lastBlock){h+=`<div class="blockhead"><h3>${blk}</h3></div>`;lastBlock=blk}
     h+=pCard(ch,n,++idx);});
+  h+=`<div class="blockhead"><h3>Daily fat-burn · instead of 10k steps</h3></div>`;
+  h+=`<div class="pmsg">Can’t get the steps in? Pick <b>ONE</b> of these and move non-stop for 12–15 min — low and steady, still able to breathe through your nose. Done in your room, it burns the same fat the walk would. This is the piece that melts the belly, so treat it as non-negotiable, most days.</div>`;
+  BURN.forEach(id=>{h+=pBurnCard(id,++idx)});
   h+=`<div class="card"><div class="pad">
-    <div style="font-weight:800" class="disp">Every day · the walk</div>
+    <div style="font-weight:800" class="disp">Walk if you can</div>
     <div style="font-size:13.5px;color:var(--muted);margin-top:4px">
-      8–10k steps, whatever else you did. Primal training builds the body; the walking is what strips the fat off your stomach.</div>
+      A walk is still the easiest win — even a 10-minute one after a meal counts. But on days it won’t happen, the burn above replaces it fully. Do one or the other, not neither.</div>
     </div></div>`;
   $("primalwrap").innerHTML=h;
   bindPrimal();}
@@ -1306,8 +1381,9 @@ function bindPrimal(){
       btn.onclick=()=>{arr[si]=!arr[si];S.psessions[pDay]=todayISO();save();
         btn.setAttribute("aria-pressed",arr[si]);btn.textContent=arr[si]?"✓":"○";
         const ct=arr.filter(Boolean).length,chip=card.querySelector(".chip");
-        chip.textContent=`${ct}/${rows.length}`;chip.className=`chip ${ct>=rows.length?"good":"gray"} num`;
-        if(arr[si])startRest(60);};});
+        if(card.dataset.burn){chip.textContent=arr[si]?"✓ today":"do it";chip.className=`chip ${arr[si]?"good":"gray"} num`;}
+        else{chip.textContent=`${ct}/${rows.length}`;chip.className=`chip ${ct>=rows.length?"good":"gray"} num`;
+          if(arr[si])startRest(60);}};});
   });}
 
 function setMode(m){
